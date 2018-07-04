@@ -1,0 +1,32 @@
+/********************ARCHIVE********************/
+.archive {
+  main > section {
+    padding-top: u(10rem);
+  }
+}
+
+
+.archive-title {
+  margin: 2em 0 1em;
+  text-decoration: underline;
+}
+.break-block {
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+  margin-left: 10px;
+  background-color: rgba($primary, 0.33);
+
+  .allCats li:last-child & {
+    display: none;
+  }
+}
+
+.wp-prev-next {
+  .prev-link {
+    float: left;
+  }
+  .next-link {
+    float: right;
+  }
+}

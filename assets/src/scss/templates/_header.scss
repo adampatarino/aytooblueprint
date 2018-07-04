@@ -1,0 +1,387 @@
+/********************HEADER********************/
+
+#header {
+    .hero-banner {
+        position: relative;
+        min-height: 200px;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        
+        .inner-banner {
+            position: relative;
+            min-height: 200px;
+            margin-left: 1rem;
+            margin-right: 1rem;
+            @media (min-width: 770px) {
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+        
+        .logo-square {
+            display: block;
+            position: absolute;
+            max-width: 150px;
+            top: 50%;
+            transform: translateY(-50%);
+            @media (min-width: 770px) {
+                max-width: 200px;
+                margin-left: 1em;
+            }
+            
+            img {
+                max-width: 100%;
+                height: auto;
+            }
+        }
+        
+        .header-icons {
+            display: none;
+            @media (min-width: 770px) {
+                display: block;
+                position: absolute;
+                right: 0;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+            img {
+                margin-right: .5em;
+            }
+        }
+        
+        @media (min-width: 770px) {
+            min-height: 350px;
+            background-position: left center;
+            .inner-banner { min-height: 350px; }
+        }
+    }
+}
+
+#nav-bar {
+    position: absolute;
+    top: 200px;
+    width: 100%;
+    background: $primary;
+    @media (min-width: 770px) {
+        top: 350px;
+    }
+    .inner-nav-bar {
+        width: 100%;
+        overflow: hidden;
+    }
+    
+    .logo-wrap {
+        position: relative;
+        float: left;
+        width: 200px;
+        height: 80px;
+        z-index: 999;
+        .logo-text {
+            display: block;
+            margin: 0 auto;
+            padding: .5em 0;
+            height: 100%;
+            width: auto;
+            transition: all .25s ease-in-out;
+            transform: translateY(-100px);
+            img {
+                height: 100%;
+                width: auto;
+                top: 26.5px;
+            }
+        } 
+    }
+    
+    
+    &.swap {
+        background: $white;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 99999;
+        
+        .logo-text {
+            transform: translateY(0);
+        }
+    }
+}
+
+
+#header {
+    .reading-now {
+        float: left;
+        padding: 0;
+        margin-right: 1em;
+        position: relative;
+        overflow: hidden;
+        height: 80px;
+        width: 325px;
+        
+        .inner-reading-now {
+            position: absolute;
+            top: 50%;
+            transition: all ease-in-out .25s;
+            transform: translateY(-100px);
+        }
+        
+        h4,p {
+            margin: 0;
+            color: $white;
+        }
+        .reading-now-title {
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: .9rem;
+            margin-bottom: .25em;
+        }
+        .read-now-article {
+            line-height: 1em;
+            font-size: 1rem;
+        }
+    }
+    .swap {
+        .inner-reading-now {
+            transform: translateY(-50%);
+        }
+    }
+}
+
+#header {
+    .share-wrap {
+        float: right;
+        margin-right: 1em;
+        position: relative;
+        overflow: hidden;
+        
+        .inner-share {
+            transition: all .25s ease-in-out;
+            transform: translateY(-100px);
+        }
+        .social-links {
+            position: relative;
+            margin: 1em 0;
+            padding-right: 2em;
+            border-right: 1px solid $white;
+            bottom: 0;
+            i {color: $white;}
+            a:hover i {color: $peeps;}
+            i.ion-email {line-height: 40px;}
+        }
+    }
+    .swap .inner-share {transform: translateY(0);}
+}
+
+@media (max-width: 1175px) {
+    #header .reading-now {display: none;}
+}
+@include bp(mobile) {
+    #header {
+        #progress-element, .share-wrap, .reading-now {
+            display: none;
+        }
+    }
+}
+@include bp(tablet-only) {
+    #header {
+        #progress-element, .share-wrap, .reading-now {
+            display: none;
+        }
+    }
+}
+/* Adds dropdown support, gives a good example of nesting
+* with SCSS. The classes are specific to the Scratch
+* Theme for WordPress. If you are not using Scratch, you
+* can simply get rid of them.
+*/
+
+
+nav ul.main-nav {
+    display: none;
+    list-style: none;
+    position: absolute;
+    width: 100%;
+    top: 80px;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    @extend .clearfix;
+    
+    li {
+        display: block;
+        text-align: center;
+        
+        a {
+            background-color: $primary;
+            color: $white;
+            display: block;
+            padding: u(0.5rem 1rem);
+            font-family: $sans;
+            @include easing(background-color);
+            
+            &:link, &:active, &:visited {
+                background-color: $primary;
+                color: $white;
+            }
+            
+            &:hover, &:focus {
+                background-color: darken($primary, 5%);
+                text-decoration: none;
+            }
+        }
+        
+        &.current_page_item {
+            a {
+                background-color: darken($primary, 5%);
+                
+                &:link, &:active, &:visited {
+                    background-color: darken($primary, 5%);
+                }
+            }
+        }
+    }
+    
+    ul.sub-menu {
+        display: none;
+    }
+}
+
+@media (min-width: 767px) {
+    nav ul.main-nav {
+        position: relative;
+        width: auto;
+        top: 0;
+        float: right;
+        display: block !important;
+        
+        li {
+            float: left;
+            
+            a {
+                padding: u(27px 1rem 26px);
+                &:link, &:active, &:visited {}
+                &:hover, &:focus {}
+            }
+        }
+        
+        ul.sub-menu {
+            background-color: $primary;
+            padding: 0;
+            position: absolute;
+            top: 100%;
+            
+            li {
+                float: none;
+                position: relative;
+                text-align: left;
+                
+                a {
+                    padding: u(0.5rem 1rem);
+                    background-color: $primary;
+                    color: $white;
+                    
+                    &:link, &:active, &:visited {
+                        background-color: $primary;
+                        color: $white;
+                    }
+                    
+                    &:hover, &:focus {
+                        background-color: darken($primary, 5%);
+                        text-decoration: none;
+                    }
+                }
+            }
+            
+            ul {
+                position: absolute;
+                left: 100%;
+                top: 0;
+            }
+        }
+    }
+    
+    nav ul.main-nav li:hover > ul.sub-menu {
+        display: block;
+    }
+}
+
+.nav-toggle {
+    @media (min-width: 767px) {
+        display: none;
+    }
+    color: $white;
+    cursor: pointer;
+    position: absolute;
+    top: u(1rem);
+    right: u(1rem);
+    margin-bottom: 0;
+    font-size: u(2rem);
+    
+    i {
+        vertical-align: middle;
+    }
+    @include easing;
+    
+    &.active {
+        transform: rotate(-90deg);
+    }
+}
+
+// Colors Swap -- 12.3.16
+/**
+* Color swap
+* 12.3.16
+* Containing all the color changes in one block
+* so it can be commented / deleted more easily
+*/
+#header {
+    .swap {
+        background-color: $white;
+        border-bottom: 1px solid $gray-light;
+        nav ul.main-nav li {
+            a, a:link, a:visited, a:active {
+                transition: none;
+                background: none;
+                color: $black;
+            }
+            &.current-menu-item a, a:hover {
+                background: $gray-lightest;
+            }
+        }
+        
+        .reading-now {
+            h4,p {
+                color: $black;
+            }
+        }
+        
+        .share-wrap .social-links {
+            border-right-color: $gray-dark;
+            i {color: $gray-dark;}
+            i:hover {color: $primary; }
+        }
+        
+        #progress-element {
+            background-color: $primary !important;
+            height: 3px !important;
+            margin-top: -2px;
+        }
+        .progress-bar {
+            background-color: $primary;
+            height: 3px;
+        }
+        
+        @include bp(mobile) {
+            nav ul.main-nav {
+                background: $white;
+                border-bottom: 1px solid $gray-light;
+                li.current_page_item a:link {
+                    background-color: $gray-lightest;
+                }
+            }
+            .nav-toggle {
+                color: $primary;
+            }
+        }
+    }
+}

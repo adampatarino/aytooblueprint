@@ -1,0 +1,110 @@
+/********************PAGE********************/
+.hero-image {
+  height: 340px;
+
+  .overlay {
+    background-color: rgba($black, 0.5);
+    height: 340px;
+  }
+
+  .hero-title {
+    margin: 0 auto;
+    font-size: 1.3u rem;
+    font-weight: 700;
+    color: $white;
+    position: relative;
+    top: 71%;
+    text-align: center;
+    max-width: 60%;
+  }
+
+  @include bp(mobile) {
+    height: 250px;
+    .overlay {height: 250px;}
+    .hero-title {
+      max-width: 100%;
+    }
+  }
+}
+
+/****
+Placeholder
+****/
+.placeholder {
+  background:$gray-lightest;
+  text-align: center;
+  line-height: 5em;
+  color: $gray-light;
+}
+#sidebar .placeholder {
+  margin: 0 auto;
+}
+
+section.sevencol {
+  margin-top: u(2rem);
+
+  > h2 {
+    margin-top: u(1rem);
+    color: $primary;
+  }
+}
+
+main > section {
+  padding-top: u(3rem);
+}
+
+.allCats li {
+  display: inline;
+  margin-right: u(0.5rem);
+}
+
+/********************CONTACT PAGE********************/
+
+div#gform_confirmation_message_2, div#gform_confirmation_message_1 {
+  font-size: u(1.25rem);
+  font-weight: bold;
+  color: $blue-steel;
+  text-align: center;
+  max-width: 80%;
+  margin: 0 auto;
+  border-bottom: 1px solid;
+  border-top: 1px solid;
+  padding: u(2rem);
+}
+
+.contact-methods {
+	margin: 2em auto;
+	padding: 0 2em;
+	.contact-method {
+		margin-bottom: 1em;
+		border-radius: 4px;
+		border: 1px solid $gray-light;
+		i {
+			display: inline-block;
+			width: 60px;
+			height: 60px;
+			margin-right: 1em;
+			background:$gray-light;
+			line-height: 60px;
+			text-align: center;
+			font-size: 1.5em;
+			color: $primary;
+		}
+	}
+
+	@include bp(mobile) {
+		padding: 0;
+		.contact-method i {
+			width: 30px;
+			height: 30px;
+			line-height: 30px;
+			font-size: .9rem;
+		}
+		.contact-method a {
+			font-size: .9rem;
+		}
+	}
+}
+
+
+/** EMAIL SUBMISSION GRAVITY FORMS ON _FOOTER.SCSS **/

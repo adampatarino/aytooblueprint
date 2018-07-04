@@ -1,0 +1,180 @@
+/********************SINGLE********************/
+
+main {
+  margin-top: 80px;
+
+  .headroom {
+    padding-top: u(2rem);
+    @include bp(mobile) {
+      padding-top: 1em;
+    }
+  }
+
+  .single-post & {
+    header {
+      margin-top: u(3rem);
+      border-bottom: 1px solid $silver;
+      h1 {
+        display: block;
+        font-size: u(2.5rem);
+      }
+    }
+
+    .article-footer {
+      margin-top: 3em;
+      padding-top: 1em;
+      border-top: 8px solid $ghost;
+
+      @include bp(mobile) {
+        .rrssb-buttons {
+          height: auto;
+          li {
+            display: block;
+            float: none;
+            width: 100% !important;
+            margin-bottom: .5em;
+            a {
+              padding: 11px 7px 12px 27px;
+              .icon {
+                position: absolute;
+                top: 17%; left: 10px;
+                height: 66%;
+                width: 10%;
+              }
+              .text {
+                font-size: .8rem;
+                display: inline;
+                visibility: visible;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.article-body {
+  a {
+    font-weight: bold;
+    // text-decoration: underline;
+  }
+}
+
+.linkage-header {
+    margin: 2em 0;
+}
+
+.links {  
+  .link-group-title {
+    text-decoration: underline;
+    &:first-child {
+      margin-top: 0;
+    }
+    // @include bp(tablet) {
+    //   background:none;
+    //   text-align: left;
+    //   padding: 0;
+    // }
+  }
+  ul, ol {
+    margin: 0;
+    padding: 0;
+  }
+  li {
+    display: block;
+    $spacing: .8em;
+    list-style: none;
+    position: relative;
+    margin: 0 0 $spacing;
+    padding: 0 $spacing $spacing $spacing * 1.75;
+    border-bottom: 1px solid $gray-lightest;
+
+  }
+  ol {
+    li {
+      display: list-item;
+      margin-left: 1.5em;
+      list-style-type: decimal;
+      // font-family: $serif;
+      color: $gray-dark;
+    }
+  }
+  .link-favicon {
+    position: absolute;
+    top: .35em; left: 0;
+    width: 16px;
+    height: 16px;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    border-radius: 2px;
+  }
+  a.link {
+    color: $primary;
+    font-size: 1.15em;
+    font-family: $sans;
+    &:link, &:visited, &:active {
+        text-decoration: none;
+    }
+    &:hover {
+      color: darken($primary,10%);
+      text-decoration: underline;
+    }
+    &:visited {
+      color: #999;
+    }
+  }
+  .source {
+    display: block;
+    color: #999;
+    font-size: .8em;
+  }
+
+  .link-meta {
+    font-size: small;
+    font-family: $sans;
+    color: $silver;
+    a {
+      color: $gray;
+      margin-right: .5em;
+      &:hover {
+        color: $blue;
+      }
+    }
+    .meta-link {
+      padding-right: .5em;
+      border-right: 1px solid $gray-light;
+      &.link-Instapaper {border-right: none; margin-right: 0;}
+    }
+    .symbols-label {
+      border-left: 1px solid $gray-light;
+      padding-left: .5em;
+    }
+  }
+}
+
+.podcast-list {
+  .link {
+    font-size: 1.25rem;
+    // font-family: $serif;
+    color: $black;
+    &:hover {
+      color: $gray-dark;
+    }&:visited + .podcast-description {
+      color: $gray;
+    }
+  }
+
+  .podcast-description {
+    margin-top: .25em;
+    font-size: 1rem;
+    color: $gray-dark;
+    a {
+      color: $gray;
+      text-decoration: underline;
+      &:hover {
+        color: $red;
+      }
+    }
+  }
+}

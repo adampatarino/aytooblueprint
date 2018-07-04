@@ -1,0 +1,221 @@
+/********************FOOTER********************/
+/*Gravity forms Subscription text area and submit button*/
+/*text area*/
+.gform_wrapper {
+  margin: 0 auto;
+}
+
+#gform, #sidebar {
+  .gform_wrapper input[type=text], .gform_wrapper input[type=url], .gform_wrapper input[type=email], .gform_wrapper input[type=tel], .gform_wrapper input[type=number], .gform_wrapper input[type=password] {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 0;
+    border-radius: 4px 4px 0 0;
+  }
+  .gform_wrapper .gform_footer input.button, .gform_wrapper .gform_footer input[type=submit], .gform_wrapper .gform_footer input[type=image] {
+    width: 100%;
+    border-radius: 0 0 4px 4px;
+  }
+  .gform_footer {
+    margin: 0;
+    padding: 0;
+  }
+  .gform_body {
+    width: 55%;
+    margin: 0 auto;
+    @include bp(mobile) {
+      width: 100%;
+    }
+    li {
+      padding: 0;
+      margin: 0;
+    }
+  }
+  .gform_wrapper input[type=text], #footer #footer-cta #gform .gform_wrapper input[type=url], #footer #footer-cta #gform .gform_wrapper input[type=email], #footer #footer-cta #gform .gform_wrapper input[type=tel], #footer #footer-cta #gform .gform_wrapper input[type=number], #footer #footer-cta #gform .gform_wrapper input[type=password] {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 0;
+    border-radius: 4px 4px 0 0;
+    border: none;
+  }
+  .gform_wrapper div.validation_error {
+    text-align: center;
+    color: $blue-steel;
+    font-size: 1.2em;
+    clear: both;
+    border: none;
+  }
+  .gfield_description.validation_message {
+    display: none;
+  }
+  .gform_footer.top_label {
+    width: 55%;
+    margin: 0 auto;
+    @include bp(mobile) {
+      width: 100%;
+    }
+  }
+  .gform_wrapper .gform_body .gform_fields {
+    border: none;
+  }
+  #gform_wrapper_1 .gform_body .gform_fields {
+    border: none;
+  }
+  /*end submit section*/
+  label {
+    display: none;
+  }
+  .gform_wrapper li.gfield.gfield_error.gfield_contains_required div.ginput_container {
+    margin: 0 auto;
+    width: 100%;
+  }
+  .gform_wrapper li.gfield.gfield_error.gfield_contains_required {
+    margin-top: 0;
+    margin-bottom: 0 !important;
+    width: 100%;
+  }
+}
+
+#sidebar {
+  .gform_wrapper form {
+    @extend .clearfix;
+  }
+  .gform_body {
+    width: 76%;
+    float: left;
+    input[type=text] {
+      padding: 4px;
+      border-radius: 4px 0 0 4px;
+      border: 1px solid $gray-light;
+      border-right: none;
+      text-align: left;
+      &:focus {border-color: $primary;}
+    }
+    .ginput_container {margin-top: 0;}
+  }
+  .gform_footer.top_label {
+    width: 24%;
+    float: left;
+    clear: none;
+    input[type=submit].button {
+      border: 1px solid $primary;
+      border-radius: 0 4px 4px 0;
+      padding: 5px 5px;
+      line-height: 20px;
+      background:transparent;
+      color: $primary;
+      &:hover, &:focus {
+        outline: none;
+        background:$primary;
+        color: $white;
+      }
+    }
+  }
+}
+
+#footer {
+  margin-top: u(4rem);
+  #footer-cta {
+    position: relative;
+    background-color: $peeps;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    // height: 310px;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    padding: u(3rem);
+    &:after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background:rgba($peeps, .75);
+      z-index: 0;
+    }
+    .inner-footer-cta {
+      position: relative;
+      z-index: 1;
+    }
+    h2.cta-title.center {
+      font-size: u(2rem);
+      font-weight: 700;
+      color: $blue-steel;
+      text-transform: uppercase;
+      margin-bottom: u(-1rem);
+    }
+    h2.cta-tagline.center {
+      color: $white;
+      font-size: u(1.38rem);
+      font-weight: 700;
+    }
+
+
+  }
+  /*end gravity forms Subscription text area and submit button*/
+  .social-media {
+    padding-top: u(2rem);
+    a {
+      text-align: center;
+      margin: u(.5rem);
+      @include bp(mobile) {
+        margin: u(.3rem);
+      }
+      i {
+        font-size: u(2rem);
+        background-color: $white;
+        border-radius: 4px;
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+        color: $primary;
+        @include bp(mobile) {
+          font-size: u(1.7rem);
+          width: 40px;
+          height: 40px;
+        }
+      }
+      &:hover, &:focus, &:active {
+        text-decoration: none;
+        i {
+          background-color: $primary;
+          text-decoration: none;
+          color: $white;
+        }
+      }
+    }
+  }
+}
+
+.footer-links {
+  width: 100%;
+  margin: 1em auto;
+  background-color: $blue-steel;
+  .footer-links-top, .footer-links-bottom {
+    padding: .5em 0;
+  }
+  .footer-links-top {
+    border-bottom: 2px solid lighten($blue-steel, 5%);
+  }
+  .copyright {
+    color: $gray;
+    margin: u(.5rem);
+    font-size: u(.75rem);
+  }
+}
+
+#nav-footer {
+  ul {
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    li {
+      display: inline-block;
+      margin: .5em 1em;
+      a {
+        color: $gray;
+      }
+    }
+  }
+}

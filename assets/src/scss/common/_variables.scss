@@ -1,0 +1,62 @@
+/********************CUSTOM VARIABLES********************/
+
+// Breakpoints
+    $bp-mobile  :   576px;
+    $bp-tablet  :   768px;
+    $bp-desktop :   992px;
+    $bp-xlarge  :   1200px;
+    $bp-large   :   $bp-desktop;
+    $bp-medium  :   $bp-tablet;
+    $bp-small   :   $bp-mobile;
+ 
+// Mixins
+  // Breakpoint Mixin
+  @mixin bp($point) {
+    @if $point == xlarge or $point == large {
+        @media (min-width: $bp-xlarge) { @content; }
+    }
+    @if $point == desktop or $point == large {
+      @media (min-width: $bp-desktop) { @content; }
+    }
+    @else if $point == tablet or $point = medium {
+      @media (min-width: $bp-tablet) { @content; }
+    }
+    @else if $point == tablet-only {
+      @media (min-width: $bp-tablet) and (max-width: $bp-desktop) { @content; }
+    }
+    @else if $point == mobile or $point = mobile {
+      @media (max-width: $bp-mobile)  { @content; }
+    }
+    @else if $point == retina {
+      @media  (min-device-pixel-ratio: 1.5),
+              (-webkit-min-device-pixel-ratio: 1.5)
+              { @content; }
+    }
+  }
+
+/********* Custom fonts example (modify as needed) *********/
+
+/*
+ * Google Fonts Examples
+ */
+$sans: '';
+$serif: '';
+
+/********* Custom colors example (modify as needed) *********/
+
+/*
+Gray Scale
+*/
+$white: #f9f7f7;
+$silver: #cccccc;
+$gray: #eeeeee;
+$gray-lightest: $gray;
+$gray-light: $silver;
+$gray-medium: #999;
+$gray-dark: #616566;
+$black: #444444;
+
+/* Theme colors  */
+$primary: #6D2B27;
+$secondary: '';
+$tertiary: '';
